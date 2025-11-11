@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ArtistMapper {
     public ArtistDto toDto(Artist entity) {
+        if (entity == null) {
+            return null;
+        }
         return new ArtistDto(entity.getName(), entity.getMembers());
     }
 }
